@@ -1,0 +1,83 @@
+/* CSS Reset usando o caracter coringa (*) */
+*{
+    margin: 0;  /* Margem externa (da borda para fora)*/
+    padding: 0; /* Margem interna (da borda para dentro)*/
+}
+/* Variáveis para a paleta de cores */
+:root{
+    --cor-azul-claro: #32b3b3;
+    --cor-azul-escuro:#4d15ce;
+    --cor-fundo-página:#f5efe6;
+    --cor-branca:white;
+    --cor-fundo-seção:#ffffff;
+    --cor-sombra:rgba(0,0,0,0.2);
+    --cor-fundo-dica:#fff8e1;
+    --cor-borda-dica:#f0ad4e;
+   --cor-preta:(0,0,0);
+}
+/* regra de formatação */
+
+body{
+    font-family: Arial, Helvetica, sans-serif; /* fonte do texto*/
+    background-color: var(--cor-fundo-página);
+}
+header{
+    background-color: var(--cor-azul-claro); /* cor do fundo */
+    color:var(--cor-branca);                /* cor da face */
+    text-align: center;          /* alinhamento horizontal */
+    padding: 40px 0px;           /* margem interna: topo direita, baixo esquerda */
+}
+h1{
+    font-size: 60px;             /* tamanho da letra */
+    
+}
+p{
+    font-size: 18px;
+}
+nav{
+    background-color:var(--cor-azul-claro);
+    /* margin-top: 1px; */
+    /* margin-left: 30px; */
+    /*margin:1px 0px 0px 30px; /* ordem em sentido horário top,right,bottom e left*/
+    /* Margin:1px se vc aplicar só um deles ele vai ser aplicado para todos e se tiver duas especificações ele vai jogar isso para os contrários deles*/
+    padding: 12px;
+    text-align: center;
+
+}
+main{
+    width: 900px;  /*Largura do bloco*/
+    margin:0px auto;
+}
+
+section{
+    margin-top: 30px;
+    background-color: var(--cor-fundo-seção);
+    padding:30px;
+    border-radius: 10px; /* cantos arredondados */
+    /*
+    deslocamento horizontal
+    deslocamento vertical
+    desfoque
+    */
+    box-shadow: 0 2px 10px var(--cor-sombra);
+}
+section h2{
+    color: var(--cor-preta);
+    border-bottom: 3px solid var(--cor-azul-escuro);
+    margin-bottom: 20px;
+    padding-bottom:8px;
+}
+section p{
+    margin-bottom: 15px;
+    line-height: 150%;
+
+
+}
+/* Criar uma classe em CSS */
+.observação{
+    background-color:var(--cor-fundo-dica);
+    border-left: 5px solid var(--cor-borda-dica);
+    padding: 15px 18px;
+    border-radius: 6px;
+
+}
