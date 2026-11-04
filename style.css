@@ -14,8 +14,12 @@
     --cor-fundo-dica:#fff8e1;
     --cor-borda-dica:#f0ad4e;
    --cor-preta:(0,0,0);
-   
-}
+   --cor-verde-whatsapp:#25d366;
+   --cor-marrom-escuro:#4e342e;
+   --cor-marrom-médio:#b07d52;
+   --cor-borda-tabela:#e0d3c4;
+}  
+
 /* regra de formatação */
 
 body{
@@ -81,6 +85,44 @@ section p{
 
 
 }
+section ul,section ol{
+     margin-left: 24px;
+    margin-bottom: 12px;
+}
+section li{
+    margin-bottom:10px;
+}
+section hr{
+    border-top: 2px dotted var(--cor-marrom-médio);
+    margin: 10px 0px; 
+}
+section img{
+    max-width:100%;
+    border-radius:50%;
+    margin:auto;
+}
+table{
+    width: 100%;
+    border-collapse: collapse;
+    
+
+}
+th,td{
+    border: 1px solid var(--cor-borda-tabela);
+    padding: 10px 14px;
+    text-align: left; 
+}
+th{
+    background-color: var(--cor-marrom-escuro);
+    color:var(--cor-branca);
+}
+.comidas-favoritas th{
+  border:none;
+}
+.comidas-favoritas td{
+  border:none;
+  border-bottom: 1px solid var(--cor-borda-tabela);
+}
 /* Criar uma classe em CSS */
 .observação{
     background-color:var(--cor-fundo-dica);
@@ -88,4 +130,30 @@ section p{
     padding: 15px 18px;
     border-radius: 6px;
 
+}
+#contato{
+    text-align: center;     /* centralizar o texto */
+    padding:40px 20px;
+    background:linear-gradient(120deg, var(--cor-azul-escuro),var(--cor-azul-claro));
+    color: var(--cor-branca);
+}
+#contato h2{
+    margin-bottom:10px;
+    border-bottom:none;    /* tirar a borda existente */
+    font-size:20px;
+    color:var(--cor-branca);
+}
+.botao{
+    background-color: var(--cor-branca);
+    color: var(--cor-marrom-escuro);
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius:20px;
+    display: inline-block; /* combina o comportamento inline com block*/
+      
+}
+.botao:hover{
+    background-color:var(--cor-verde-whatsapp);
+    transform:translateY(-3px);  /* movimenta o elemento em uma direção X ou Y */
+    
 }
