@@ -1,0 +1,88 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.2/font/bootstrap-icons.min.css");
+
+:root {
+    --cor-fundo-experiencias: #faf6f0
+}
+
+/* Cabeçalho animado */
+
+.topo-animado h1, .topo-animado p {
+    animation: surgir 0.9s ease-out both;
+
+    /* 
+        surgir: Nome do keyframe (abaixo)
+        0.9s: Duração da animação
+        ease-out: Começa mais rápidamente e termina desacelerando
+        both: Aplica os estilos iniciais e mantém no final
+    */
+}
+
+.topo-animado p {
+    animation-delay: 0.3s;
+    /* O parágrafo começa a animação mais tardia */
+}
+
+@keyframes surgir {
+    from {
+        opacity: 0;                     /* inicia transparente */
+        transform: translateX(20px);    /* desloca o elemento 20 pixels para baixo */
+    }
+    to {
+        opacity: 1;                     /* totalmente visível */
+        transform: translateY(0);       /* o elemento rertorna a posição inicial */
+    }
+}
+
+/* Seção diferenciais - uso do flexbox */
+/* No flexbox, esta regra é para um elemento pai*/
+.jogos {
+    display: flex;
+    gap: 20px;
+}
+/* esta regra é para um elemento filho */
+.jogo {
+    flex: 1;
+    background-color: var(--cor-fundo-experiencias);
+    border: 1px solid var(--cor-borda-tabela);
+    border-top: 4px solid var(--cor-marrom-medio);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Incluir e formatar os ícones */
+/* ::before é um pseudo-elemento - atua sobre uma parte espécífica de uma tag html */
+
+.jogo::before{
+    font-family:"bootstrap-icons";
+    font-size: 2.2rem;
+    color:var(--cor-marrom-medio);
+    margin-bottom: 10px;
+    display:block;
+}
+
+.granturismo-icone::before{
+    content: "\F7E1";
+}
+.rocketleague-icone::before{
+    content: "\F7E1";
+}
+.fifa-icone::before{
+    content: "\F28A";
+    font-weight: bold;
+}
+
+/* Regras para layout responsivo */
+/* media queries */
+@media (max-width: 600px){
+    h1{
+        font-size:24px;
+    }
+    header p{
+        font-size: 15px;
+    }
+    .jogos{
+        flex-direction:column;
+    }
+
+}
