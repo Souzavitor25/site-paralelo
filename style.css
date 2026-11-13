@@ -52,12 +52,15 @@ nav{
 nav a{
     color: azure;
     text-decoration:none;
+    padding: 8px 14px;
+    border-radius: 6px;
 }
 nav a:hover{
-    text-decoration: underline;
+    /* text-decoration: underline; */
+    background-color:var(--cor-azul-escuro);
 }
 main{
-    width: 900px;  /*Largura do bloco*/
+    max-width: 900px;  /*Largura do bloco*/
     margin:0px auto;
 }
 
@@ -132,9 +135,9 @@ th{
 
 }
 #contato{
-    text-align: center;     /* centralizar o texto */
+    /* text-align: center;     centralizar o texto */
     padding:40px 20px;
-    background:linear-gradient(120deg, var(--cor-azul-escuro),var(--cor-azul-claro));
+    background:linear-gradient(120deg, var(--cor-azul-claro),var(--cor-branca));
     color: var(--cor-branca);
 }
 #contato h2{
