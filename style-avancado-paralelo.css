@@ -1,7 +1,10 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.2/font/bootstrap-icons.min.css");
 
 :root {
-    --cor-fundo-experiencias: #faf6f0
+    --cor-fundo-experiencias: #faf6f0;
+    --cor-fundo-etiqueta:#e53935;
+    --cor-fundo-vegano:#2e7d32;
+    
 }
 
 /* Cabeçalho animado */
@@ -71,6 +74,97 @@
     content: "\F28A";
     font-weight: bold;
 }
+
+.Músicas{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    
+}
+.Música{
+    border:1px solid var(--cor-borda-tabela);
+    border-radius: 10px;
+    position:relative;   /* necessário para a classe etiqueta */
+}
+.Música img{
+    display:block;  /* img é inline, muda para o bloco */
+    width:100%;
+    height:170px;
+    margin-bottom:12px;
+    object-fit:cover;  /* corta a imagem sem distorcer */ 
+}
+.Música h3, .Música p{
+     padding-left:15px;
+    padding-right:15px;
+     
+}
+.Música .nota{
+    color:var(--cor-marrom-medio);
+    font-weight: bold;
+    font-size:1.2rem;
+}
+.Música .etiqueta{
+    /* permite posicionar a etiqueta em uma posição específica dentro do elemento de referência que contém o position:relative */
+    position: absolute;     /* posicionada em relação ao .produto */
+    top: 12px;
+    right:12px;
+    z-index:1;    /* Define a ordem de sobreposição */
+    background-color:var(--cor-fundo-etiqueta);
+    color: var(--cor-branca);
+    padding:4px 12px;
+    border-radius:15px;
+    font-size:0.8rem;
+    font-weight: bold;
+}
+.Música .etiqueta{
+    background-color: var(--cor-fundo-vegano);
+}
+.series{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    grid-template-areas:
+    "destaque destaque f2"
+    "destaque destaque f3";
+    
+    
+}
+.foto:nth-child(1) {grid-area: destaque; }
+.foto:nth-child(2) {grid-area: f2; }
+.foto:nth-child(3) {grid-area: f3; }
+
+.foto{
+    position: relative;
+    overflow:hidden;            /* esconde a parte da imagem que cresce com o zoom */
+    border-radius: 10px;
+    cursor:zoom-in;             /* altera o cursor para indicar possibilidade de zoom */
+}
+.foto img{
+    width:100%;   /* largura */
+    height:100%;  /* altura */
+    object-fit: cover; /*Preenche o espaço disponível mantendo a proporção */
+    display:block;  /* Converte o bloco. Por padrão, img é inline */
+    transition:transform 0.5s; /* Efeito suave de meio segundo */
+}
+.foto:hover img{
+    transform: scale(1.1); /* aumenta a imagem em 10% do seu tamanho original */
+}
+.foto figcaption{
+    position: absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    padding: 10px 14px;
+    background: linear-gradient(transparent,rgba(59,43,34,0.9));
+    color:var(--cor-branca);
+    font-weight:bold;
+    transform: translateY(100%);       /* desloca a legenda verticalmente */
+    transition: transform 0.3s;        /* controla a suavidade da animação*/
+}
+.foto:hover figcaption{
+    transform: translateY(0);       /* desloca a legenda para a posição inicial */
+}
+
 
 /* Regras para layout responsivo */
 /* media queries */
