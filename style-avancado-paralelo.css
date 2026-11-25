@@ -4,7 +4,8 @@
     --cor-fundo-experiencias: #faf6f0;
     --cor-fundo-etiqueta:#e53935;
     --cor-fundo-vegano:#2e7d32;
-    
+     --cor-fundo-depoimento:#faf6f0;
+    --cor-fundo2-depoimento:#e8d3bd;
 }
 
 /* Cabeçalho animado */
@@ -163,6 +164,78 @@
 }
 .foto:hover figcaption{
     transform: translateY(0);       /* desloca a legenda para a posição inicial */
+}
+.video-youtube{
+    /* mantém a proporção 16:9 em qualquer largura de tela */
+    aspect-ratio: 16 / 9;
+    margin-bottom:10px;
+}
+
+.video-youtube iframe{
+    
+    display:block;
+    width:100%;
+    height:100%;
+}
+/* Formatação da equipe */
+.equipe{
+    display:flex;
+    gap: 30px;
+    justify-content: center;
+}
+.membro{
+    text-align: center;
+    width:150px;
+
+}
+.membro img{
+    width:120px;
+    height:120px;
+    border-radius: 50%;
+}
+/* Formatação dos depoimentos */
+.depoimentos{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+.depoimento{
+    position: relative;
+    background-color: var(--cor-azul-claro);
+    border-radius: var(10px);
+    padding: 35px 20px 20px;
+    border-radius:10px;
+}
+/* nth-child identifica elementos em uma lista de filhos
+even: aplica em elementos par
+odd: aplica em elementos ímpar
+*/
+.depoimento:nth-child(even){
+    background-color: var(--cor-azul-claro);
+}
+.depoimento::before{
+    content: "\F6B0";
+    position: absolute;
+    top: 0;
+    left: 14px;
+    font-family: "bootstrap-icons";
+    font-size: 2.4rem;
+    color: var(--cor-marrom-medio);
+    line-height: 1;
+}
+cite{
+    font-weight: bold;
+    font-size: 0.9rem;
+    color:var(--cor-marrom-medio);
+}
+/* Formatação do footer */
+footer{
+    background-color: var(--cor-marrom-medio);
+    color:var(--cor-fundo-vegano);
+    text-align:center;
+    padding: 24px 20px;
+    font-size: 0.9rem;
+    margin-top: 10px;
 }
 
 
